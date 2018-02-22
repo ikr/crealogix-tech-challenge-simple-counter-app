@@ -6,7 +6,10 @@ class NumberInputView extends React.Component {
     render () {
         return (
             <div className='jumbotron'>
-                <h1 className='display-1'>{this.props.currentValue}</h1>
+                <a href="#">
+                    <h1 className='display-1'>{this.props.currentValue}</h1>
+                </a>
+
                 <hr/>
 
                 <InputButton

@@ -50,6 +50,10 @@ describe('NumberInputView rendered for value 12', () => {
         it('is supposed to be huge due to the display-1 CSS class', () => {
             massert.cssClass(h1, 'display-1')
         })
+
+        it('is wrapped into an anchor element', () => {
+            assert(node.querySelector('a > h1'))
+        })
     })
 
     it('displays a separator', () => {
