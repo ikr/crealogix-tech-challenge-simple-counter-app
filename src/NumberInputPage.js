@@ -11,6 +11,7 @@ class NumberInputPage extends React.Component {
 
                 <InputButton
                     text='+'
+                    onClick={this.props.onPlus}
                     ref={el => { this.plusButton = el }}/>
 
                 {' '}
@@ -18,6 +19,7 @@ class NumberInputPage extends React.Component {
                 <InputButton
                     text='−'
                     disabled={this.props.currentValue === 0}
+                    onClick={this.props.onMinus}
                     ref={el => { this.minusButton = el }}/>
             </div>
         )
@@ -25,7 +27,9 @@ class NumberInputPage extends React.Component {
 }
 
 NumberInputPage.propTypes = {
-    currentValue: PropTypes.number.isRequired
+    currentValue: PropTypes.number.isRequired,
+    onPlus: PropTypes.func.isRequired,
+    onMinus: PropTypes.func.isRequired
 }
 
 export default NumberInputPage

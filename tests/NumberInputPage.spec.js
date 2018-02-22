@@ -12,13 +12,20 @@ describe('NumberInputPage', () => {
     })
 })
 
+function onPlus () {}
+function onMinus () {}
+
 describe('NumberInputPage rendered for value 12', () => {
     let element
     let node
 
     beforeEach(() => {
         TU.renderIntoDocument(
-            <NumberInputPage ref={el => { element = el }} currentValue={12}/>
+            <NumberInputPage
+                onPlus={onPlus}
+                onMinus={onMinus}
+                currentValue={12}
+                ref={el => { element = el }}/>
         )
 
         node = ReactDOM.findDOMNode(element)
@@ -57,6 +64,10 @@ describe('NumberInputPage rendered for value 12', () => {
         it('displays the "+"', () => {
             assert.strictEqual(element.plusButton.props.text, '+')
         })
+
+        it('accepts the onPlus as the click handler', () => {
+            assert.strictEqual(element.plusButton.props.onClick, onPlus)
+        })
     })
 
     describe('minus button', () => {
@@ -71,6 +82,10 @@ describe('NumberInputPage rendered for value 12', () => {
         it('is enabled', () => {
             assert(!element.minusButton.props.disabled)
         })
+
+        it('accepts the onMinus as the click handler', () => {
+            assert.strictEqual(element.minusButton.props.onClick, onMinus)
+        })
     })
 })
 
@@ -79,7 +94,11 @@ describe('NumberInputPage rendered for value 0', () => {
 
     beforeEach(() => {
         TU.renderIntoDocument(
-            <NumberInputPage ref={el => { element = el }} currentValue={0}/>
+            <NumberInputPage
+                onPlus={onPlus}
+                onMinus={onMinus}
+                currentValue={0}
+                ref={el => { element = el }}/>
         )
     })
 
