@@ -1,8 +1,12 @@
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import NumberInputPage from './NumberInputPage'
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <div>
+        <h1>Hello, world!</h1>
+        <NumberInputPage/>
+    </div>,
     global.document.getElementById('main')
 )
