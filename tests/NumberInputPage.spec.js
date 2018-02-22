@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import TU from 'react-dom/test-utils'
 import * as massert from './helpers/massert'
 import NumberInputPage from '../src/NumberInputPage'
+import InputButton from '../src/InputButton'
 
 describe('NumberInputPage', () => {
     it('is a function', () => {
@@ -19,7 +20,7 @@ describe('NumberInputPage rendered', () => {
         TU.renderIntoDocument(
             <NumberInputPage
                 ref={el => { element = el }}
-                currentValue='12'/>
+                currentValue={12}/>
         )
         node = ReactDOM.findDOMNode(element)
     })
@@ -47,5 +48,13 @@ describe('NumberInputPage rendered', () => {
 
     it('displays a separator', () => {
         assert(node.querySelector('hr'))
+    })
+
+    it('contains the plus button', () => {
+        assert(TU.isCompositeComponentWithType(element.plusButton, InputButton))
+    })
+
+    it('contains the minus button', () => {
+        assert(TU.isCompositeComponentWithType(element.minusButton, InputButton))
     })
 })
