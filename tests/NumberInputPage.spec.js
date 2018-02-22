@@ -25,7 +25,6 @@ describe('NumberInputPage rendered', () => {
     })
 
     it('is a div', () => {
-        assert(node)
         assert.strictEqual(node.tagName, 'DIV')
     })
 
