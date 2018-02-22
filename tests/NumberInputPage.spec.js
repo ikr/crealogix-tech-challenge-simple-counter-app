@@ -18,10 +18,9 @@ describe('NumberInputPage rendered for value 12', () => {
 
     beforeEach(() => {
         TU.renderIntoDocument(
-            <NumberInputPage
-                ref={el => { element = el }}
-                currentValue={12}/>
+            <NumberInputPage ref={el => { element = el }} currentValue={12}/>
         )
+
         node = ReactDOM.findDOMNode(element)
     })
 
@@ -72,5 +71,19 @@ describe('NumberInputPage rendered for value 12', () => {
         it('is enabled', () => {
             assert(!element.minusButton.props.disabled)
         })
+    })
+})
+
+describe('NumberInputPage rendered for value 0', () => {
+    let element
+
+    beforeEach(() => {
+        TU.renderIntoDocument(
+            <NumberInputPage ref={el => { element = el }} currentValue={0}/>
+        )
+    })
+
+    it('disables the minus button', () => {
+        assert(element.minusButton.props.disabled)
     })
 })

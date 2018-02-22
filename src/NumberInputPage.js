@@ -17,6 +17,7 @@ class NumberInputPage extends React.Component {
 
                 <InputButton
                     text='−'
+                    disabled={this.props.currentValue === 0}
                     ref={el => { this.minusButton = el }}/>
             </div>
         )
