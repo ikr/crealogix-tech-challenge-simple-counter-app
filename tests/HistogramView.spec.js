@@ -52,6 +52,10 @@ describe('NumberInputView rendered for [7, 6, 5]', () => {
             it('contains 7', () => {
                 massert.contains(td.textContent, '7')
             })
+
+            it('is right-aligned by declared CSS class', () => {
+                massert.cssClass(td, 'text-right')
+            })
         })
 
         describe('second column', () => {
@@ -64,10 +68,6 @@ describe('NumberInputView rendered for [7, 6, 5]', () => {
 
             it('contains ⬛⬛⬛⬛⬛⬛⬛', () => {
                 massert.contains(td.textContent, '⬛⬛⬛⬛⬛⬛⬛')
-            })
-
-            it('is right-aligned by declared CSS class', () => {
-                massert.cssClass(td, 'text-right')
             })
         })
     })

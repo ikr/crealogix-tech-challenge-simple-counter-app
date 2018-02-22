@@ -15,8 +15,8 @@ function repeat (times, what) {
 function Row ({value}) {
     return (
         <tr>
-            <td>{value}</td>
-            <td className='text-right'>{repeat(value, '⬛')}</td>
+            <td className='text-right'>{value}</td>
+            <td>{repeat(value, '⬛')}</td>
         </tr>
     )
 }
