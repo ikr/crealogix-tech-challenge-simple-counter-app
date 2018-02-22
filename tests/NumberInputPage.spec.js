@@ -65,8 +65,8 @@ describe('NumberInputPage rendered', () => {
             assert(TU.isCompositeComponentWithType(element.minusButton, InputButton))
         })
 
-        it('displays the "-"', () => {
-            assert.strictEqual(element.minusButton.props.text, '-')
+        it('displays the "−"', () => {
+            assert.strictEqual(element.minusButton.props.text, '−')
         })
     })
 })

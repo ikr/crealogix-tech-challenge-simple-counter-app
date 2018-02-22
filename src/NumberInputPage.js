@@ -16,7 +16,7 @@ class NumberInputPage extends React.Component {
                 {' '}
 
                 <InputButton
-                    text='-'
+                    text='−'
                     ref={el => { this.minusButton = el }}/>
             </div>
         )
