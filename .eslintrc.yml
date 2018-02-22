@@ -1,0 +1,14 @@
+extends:
+  - standard
+  - plugin:react/recommended
+rules:
+  indent:
+    - error
+    - 4
+plugins:
+  - react
+globals:
+  global: true
+  describe: true
+  it: true
+  beforeEach: true

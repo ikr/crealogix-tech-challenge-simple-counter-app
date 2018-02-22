@@ -1,0 +1,51 @@
+{
+  "name": "crealogix-tech-challenge-simple-counter-app",
+  "version": "1.0.0",
+  "description": "Tech challenge from Crealogix: a simple counter app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha -r babel-register -r tests/helpers/jsdom -t 4000 ./tests/*.spec.js",
+    "tdd": "mocha -w -R min -r babel-register -r tests/helpers/jsdom -t 4000 ./tests/*.spec.js",
+    "lint": "eslint src tests",
+    "dev-build": "browserify -d -t babelify -g browserify-shim ./src/index.js > ./www/bundle-1.0.0.js",
+    "build": "NODE_ENV=production browserify -t babelify -t loose-envify -g browserify-shim ./src/index.js | uglifyjs -mc > ./www/bundle-1.0.0.js",
+    "watch": "watchify -t babelify -g browserify-shim ./src/index.js -d -o ./www/bundle-1.0.0.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikr/crealogix-tech-challenge-simple-counter-app.git"
+  },
+  "author": "Ivan Krechetov <ikr@ikr.su>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
+    "browserify-shim": "^3.8.14",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jsdom": "^11.6.2",
+    "loose-envify": "^1.3.1",
+    "mocha": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sinon": "^4.3.0",
+    "uglify-js": "^3.3.12",
+    "watchify": "^3.10.0"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
+  },
+  "browserify-shim": {
+    "react": "global:React",
+    "react-dom": "global:ReactDOM"
+  }
+}
