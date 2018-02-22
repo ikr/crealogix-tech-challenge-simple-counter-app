@@ -1,12 +1,10 @@
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NumberInputView from './NumberInputView'
+import HistogramView from './HistogramView'
 
 ReactDOM.render(
-    <NumberInputView
-        onPlus={() => 0}
-        onMinus={() => 0}
-        currentValue={44}/>,
+    <HistogramView
+        series={[0, 1, 2, 3, 4, 5, 4, 5, 4, 5, 6, 7, 8, 9]}/>,
     global.document.getElementById('main')
 )
