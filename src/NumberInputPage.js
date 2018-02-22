@@ -8,9 +8,16 @@ class NumberInputPage extends React.Component {
             <div className='jumbotron'>
                 <h1 className='display-1'>{this.props.currentValue}</h1>
                 <hr/>
-                <InputButton ref={el => { this.plusButton = el }}/>
+
+                <InputButton
+                    text='+'
+                    ref={el => { this.plusButton = el }}/>
+
                 {' '}
-                <InputButton ref={el => { this.minusButton = el }}/>
+
+                <InputButton
+                    text='-'
+                    ref={el => { this.minusButton = el }}/>
             </div>
         )
     }

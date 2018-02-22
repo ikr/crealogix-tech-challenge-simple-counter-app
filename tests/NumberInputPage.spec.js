@@ -50,11 +50,23 @@ describe('NumberInputPage rendered', () => {
         assert(node.querySelector('hr'))
     })
 
-    it('contains the plus button', () => {
-        assert(TU.isCompositeComponentWithType(element.plusButton, InputButton))
+    describe('plus button', () => {
+        it('is contained', () => {
+            assert(TU.isCompositeComponentWithType(element.plusButton, InputButton))
+        })
+
+        it('displays the "+"', () => {
+            assert.strictEqual(element.plusButton.props.text, '+')
+        })
     })
 
-    it('contains the minus button', () => {
-        assert(TU.isCompositeComponentWithType(element.minusButton, InputButton))
+    describe('minus button', () => {
+        it('is contained', () => {
+            assert(TU.isCompositeComponentWithType(element.minusButton, InputButton))
+        })
+
+        it('displays the "-"', () => {
+            assert.strictEqual(element.minusButton.props.text, '-')
+        })
     })
 })
