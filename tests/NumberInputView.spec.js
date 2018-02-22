@@ -3,25 +3,25 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import TU from 'react-dom/test-utils'
 import * as massert from './helpers/massert'
-import NumberInputPage from '../src/NumberInputPage'
+import NumberInputView from '../src/NumberInputView'
 import InputButton from '../src/InputButton'
 
-describe('NumberInputPage', () => {
+describe('NumberInputView', () => {
     it('is a function', () => {
-        assert.strictEqual(typeof NumberInputPage, 'function')
+        assert.strictEqual(typeof NumberInputView, 'function')
     })
 })
 
 function onPlus () {}
 function onMinus () {}
 
-describe('NumberInputPage rendered for value 12', () => {
+describe('NumberInputView rendered for value 12', () => {
     let element
     let node
 
     beforeEach(() => {
         TU.renderIntoDocument(
-            <NumberInputPage
+            <NumberInputView
                 onPlus={onPlus}
                 onMinus={onMinus}
                 currentValue={12}
@@ -89,12 +89,12 @@ describe('NumberInputPage rendered for value 12', () => {
     })
 })
 
-describe('NumberInputPage rendered for value 0', () => {
+describe('NumberInputView rendered for value 0', () => {
     let element
 
     beforeEach(() => {
         TU.renderIntoDocument(
-            <NumberInputPage
+            <NumberInputView
                 onPlus={onPlus}
                 onMinus={onMinus}
                 currentValue={0}

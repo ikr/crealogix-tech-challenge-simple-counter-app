@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InputButton from './InputButton'
 
-class NumberInputPage extends React.Component {
+class NumberInputView extends React.Component {
     render () {
         return (
             <div className='jumbotron'>
@@ -26,10 +26,10 @@ class NumberInputPage extends React.Component {
     }
 }
 
-NumberInputPage.propTypes = {
+NumberInputView.propTypes = {
     currentValue: PropTypes.number.isRequired,
     onPlus: PropTypes.func.isRequired,
     onMinus: PropTypes.func.isRequired
 }
 
-export default NumberInputPage
+export default NumberInputView

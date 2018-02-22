@@ -1,9 +1,12 @@
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NumberInputPage from './NumberInputPage'
+import NumberInputView from './NumberInputView'
 
 ReactDOM.render(
-    <NumberInputPage currentValue={44}/>,
+    <NumberInputView
+        onPlus={() => 0}
+        onMinus={() => 0}
+        currentValue={44}/>,
     global.document.getElementById('main')
 )
