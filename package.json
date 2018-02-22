@@ -16,7 +16,7 @@
     "url": "https://github.com/ikr/crealogix-tech-challenge-simple-counter-app.git"
   },
   "author": "Ivan Krechetov <ikr@ikr.su>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
