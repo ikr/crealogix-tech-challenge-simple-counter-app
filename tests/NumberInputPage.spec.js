@@ -33,7 +33,20 @@ describe('NumberInputPage rendered', () => {
         massert.cssClass(node, 'jumbotron')
     })
 
-    it('displays the current number value in an H1', () => {
-        massert.contains(node.querySelector('h1').textContent, '12')
+    describe('H1', () => {
+        let h1
+        beforeEach(() => { h1 = node.querySelector('h1') })
+
+        it('displays the current number value', () => {
+            massert.contains(h1.textContent, '12')
+        })
+
+        it('is supposed to be huge due to the display-1 CSS class', () => {
+            massert.cssClass(h1, 'display-1')
+        })
+    })
+
+    it('displays a separator', () => {
+        assert(node.querySelector('hr'))
     })
 })

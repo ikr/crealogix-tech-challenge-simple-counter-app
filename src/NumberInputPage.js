@@ -5,7 +5,8 @@ class NumberInputPage extends React.Component {
     render () {
         return (
             <div className='jumbotron'>
-                <h1>{this.props.currentValue}</h1>
+                <h1 className='display-1'>{this.props.currentValue}</h1>
+                <hr/>
             </div>
         )
     }

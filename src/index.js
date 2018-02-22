@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom'
 import NumberInputPage from './NumberInputPage'
 
 ReactDOM.render(
-    <div>
-        <h1>Hello, world!</h1>
-        <NumberInputPage/>
-    </div>,
+    <NumberInputPage currentValue="44"/>,
     global.document.getElementById('main')
 )
