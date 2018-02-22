@@ -12,7 +12,7 @@ describe('InputButton', () => {
     })
 })
 
-describe('NumberInputPage rendered', () => {
+describe('InputButton rendered', () => {
     let element
     let node
     let spy
@@ -47,5 +47,25 @@ describe('NumberInputPage rendered', () => {
     it('triggers the callback passed in props when it gets clicked', () => {
         TU.Simulate.click(node)
         assert(spy.calledOnce)
+    })
+})
+
+describe('Disabled InputButton rendered', () => {
+    let element
+    let node
+
+    beforeEach(() => {
+        TU.renderIntoDocument(
+            <InputButton
+                text="Y"
+                onClick={() => 0}
+                disabled={true}
+                ref={el => { element = el }} />
+        )
+        node = ReactDOM.findDOMNode(element)
+    })
+
+    it('passes down the "disabled" attribute', () => {
+        assert.strictEqual(node.getAttribute('disabled'), '')
     })
 })

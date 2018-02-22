@@ -7,7 +7,8 @@ class InputButton extends React.Component {
             <button
                 type='button'
                 className='btn btn-lg btn-outline-dark'
-                onClick={this.props.onClick}>
+                onClick={this.props.onClick}
+                disabled={!!this.props.disabled}>
                 {this.props.text}
             </button>
         )
@@ -16,7 +17,8 @@ class InputButton extends React.Component {
 
 InputButton.propTypes = {
     text: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool
 }
 
 module.exports = InputButton

@@ -12,7 +12,7 @@ describe('NumberInputPage', () => {
     })
 })
 
-describe('NumberInputPage rendered', () => {
+describe('NumberInputPage rendered for value 12', () => {
     let element
     let node
 
@@ -67,6 +67,10 @@ describe('NumberInputPage rendered', () => {
 
         it('displays the "−"', () => {
             assert.strictEqual(element.minusButton.props.text, '−')
+        })
+
+        it('is enabled', () => {
+            assert(!element.minusButton.props.disabled)
         })
     })
 })
