@@ -10,7 +10,7 @@ export function reduce (db, action) {
     const series = db.series.slice()
     const currentValue = series[series.length - 1]
 
-    switch (action) {
+    switch (action.type) {
     case 'PLUS':
         series.push(currentValue + 1)
         break

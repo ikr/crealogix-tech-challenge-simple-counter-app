@@ -15,17 +15,20 @@ describe('state', () => {
 
         describe('on PLUS', () => {
             it('appends incremented last number to the end of series', () => {
-                assert.deepEqual(state.reduce({series: [0, 1, 2]}, 'PLUS'), {series: [0, 1, 2, 3]})
+                assert.deepEqual(
+                    state.reduce({series: [0, 1, 2]}, {type: 'PLUS'}), {series: [0, 1, 2, 3]})
             })
         })
 
         describe('on MINUS', () => {
             it('appends decremented last number to the end of series', () => {
-                assert.deepEqual(state.reduce({series: [0, 1, 2]}, 'MINUS'), {series: [0, 1, 2, 1]})
+                assert.deepEqual(
+                    state.reduce({series: [0, 1, 2]}, {type: 'MINUS'}), {series: [0, 1, 2, 1]})
             })
 
             it('is identical when the last element in series is zero', () => {
-                assert.deepEqual(state.reduce({series: [0, 1, 0]}, 'MINUS'), {series: [0, 1, 0]})
+                assert.deepEqual(
+                    state.reduce({series: [0, 1, 0]}, {type: 'MINUS'}), {series: [0, 1, 0]})
             })
         })
     })
