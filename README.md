@@ -17,3 +17,7 @@ $ npm start
 ```
 
 Now open [http://localhost:8000/](http://localhost:8000/) in the browser.
+
+# Test
+
+As usual, `npm test`, or `npm run tdd` to watch for file changes
