@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const MAX_BARS = 64
+
 function repeat (times, what) {
     let result = ''
     let i = 0
 
-    for (; i < times; ++i) {
+    for (; i < Math.min(times, MAX_BARS); ++i) {
         result += what
     }
 
@@ -38,5 +40,6 @@ class HistogramView extends React.Component {
 }
 
 HistogramView.propTypes = { series: PropTypes.arrayOf(PropTypes.number) }
+HistogramView.MAX_BARS = MAX_BARS
 
 export default HistogramView

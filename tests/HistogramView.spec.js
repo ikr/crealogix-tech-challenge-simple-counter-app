@@ -72,3 +72,31 @@ describe('NumberInputView rendered for [7, 6, 5]', () => {
         })
     })
 })
+
+describe('NumberInputView rendered for [MAX_BARS + 1]', () => {
+    let element
+    let node
+
+    beforeEach(() => {
+        TU.renderIntoDocument(
+            <HistogramView
+                series={[HistogramView.MAX_BARS + 1]}
+                ref={el => { element = el }}/>
+        )
+
+        node = ReactDOM.findDOMNode(element)
+    })
+
+    describe('second column', () => {
+        let td
+        beforeEach(() => { td = node.querySelectorAll('td').item(1) })
+
+        it('is present', () => {
+            assert(td)
+        })
+
+        it('contains only the MAX_BARS bars tops', () => {
+            assert.strictEqual(td.textContent.length, HistogramView.MAX_BARS)
+        })
+    })
+})
