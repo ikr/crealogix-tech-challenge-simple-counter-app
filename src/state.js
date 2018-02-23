@@ -29,3 +29,7 @@ export function reduce (db, action) {
 export function currentValue (db) {
     return db.series[db.series.length - 1]
 }
+
+export function series (db) {
+    return db.series
+}

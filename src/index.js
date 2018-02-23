@@ -8,28 +8,24 @@ import NumberInputView from './NumberInputView'
 import HistogramView from './HistogramView'
 import * as state from './state'
 
-function Output () {
-    return (
-        <HistogramView
-            series={[0, 1, 2, 3, 4, 5, 4, 5, 4, 5, 6, 7, 8, 9]}/>
-    )
-}
-
-let store = createStore(state.reduce)
+const store = createStore(state.reduce)
 
 function ConnectedInput () {
     const Input = connect(
-        (db) => ({
-            currentValue: state.currentValue(db)
-        }),
+        db => ({currentValue: state.currentValue(db)}),
 
-        (dispatch) => ({
+        dispatch => ({
             onPlus: () => { dispatch({type: 'PLUS'}) },
             onMinus: () => { dispatch({type: 'MINUS'}) }
         })
     )(NumberInputView)
 
     return <Input store={store}/>
+}
+
+function ConnectedOutput () {
+    const Output = connect(db => ({series: state.series(db)}))(HistogramView)
+    return <Output store={store}/>
 }
 
 function Layout () {
@@ -47,7 +43,7 @@ function Layout () {
                 </ul>
 
                 <Route exact path='/' component={ConnectedInput} />
-                <Route path='/output' component={Output} />
+                <Route path='/output' component={ConnectedOutput} />
             </div>
         </Router>
     )

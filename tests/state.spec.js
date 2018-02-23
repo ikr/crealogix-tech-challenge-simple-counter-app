@@ -38,4 +38,10 @@ describe('state', () => {
             assert.strictEqual(state.currentValue({series: [0, 1, 2, 3, 2]}), 2)
         })
     })
+
+    describe('series', () => {
+        it('simply returns the series prop of the db', () => {
+            assert.deepEqual(state.series({series: [0, 1, 2]}), [0, 1, 2])
+        })
+    })
 })
