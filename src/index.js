@@ -12,7 +12,6 @@ function Input () {
             onMinus={() => 0}
             currentValue={44}/>
     )
-
 }
 
 function Output () {

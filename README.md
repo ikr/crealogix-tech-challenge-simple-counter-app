@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ikr/crealogix-tech-challenge-simple-counter-app.svg?branch=master)](https://travis-ci.org/ikr/crealogix-tech-challenge-simple-counter-app)
+
 # About
 
 Tech challenge from Crealogix: a simple counter app
