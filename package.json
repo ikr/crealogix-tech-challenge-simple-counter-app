@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "ramda": "^0.25.0",
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2"
   },
   "browserify-shim": {
     "react": "global:React",
